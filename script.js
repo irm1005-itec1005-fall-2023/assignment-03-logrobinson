@@ -49,16 +49,21 @@
 
 let todoItems = []; //empty array todoItems
 
+
+
 // Function to add a todo to the list
 // It should accept a string as a parameter (text of the todo item)
 // and it should add a new todo item to the todoItems array
 // The todo item should have the structure shown above
 // It's really important that you have a unique ID for each todo item that you push onto the array
 // the function does not need to return anything
-function addToDoItem(text) {
 
+counter = 0;
+
+function addToDoItem(text) {
+  counter = counter + 1
   let todoItem = {
-    id: todoItems.length, // unique id
+    id: counter,
     text: text,
     completed: false,
   };
@@ -120,23 +125,23 @@ function deleteToDoItem(todoId) {
     }
   }
   console.log("TodoItem Removed", todoId);
+  // Implement the logic to remove a task here
 
 
-  console.log("NOT YET IMPLEMENTED");
 }
 
 // Function to clear all completed tasks
 // Loop through the array of todos, and when you find a todo item that is marked
 // as completed, remove it completely from the array
-
 function clearCompletedTasks() {
   for (let i=0; i < todoItems.length; i++) {
     if(todoItems[i].completed === true) {
       todoItems.splice(i,1);
     }
   }
+  // Implement the logic to clear completed tasks here
 
-  console.log("NOT YET IMPLEMENTED");
+  console.log("Completed Tasks Removed");
 }
 
 // You can write your own tests here if you would like to test
@@ -147,8 +152,18 @@ function clearCompletedTasks() {
 //  removeToDoItem(0); // This should remove the todo item with ID 0 from the array
 //  markToDoItemAsCompleted(0); // This should mark the todo item with ID 0 as completed
 
-addToDoItem("This is a Todo Item Test");
-markToDoItemAsCompleted(0);
-clearCompletedTasks;
+
+//THESE ARE THE TESTS I CHOSE TO RUN. I tested them but then had to put them into comments so that I wouldn't have errors with the "Run Tests" button.
+
+//addToDoItem("This is a Todo Item Test");
+//addToDoItem("This is another Todo Item Test");
+//addToDoItem("This is a third Todo Item");
+//addToDoItem("This is a fourth Todo Item");
+//removeToDoItem(1);
+//deleteToDoItem(2);
+//markToDoItemAsCompleted(3);
+//clearCompletedTasks();
+//console.log(todoItems);
+
 
 
